@@ -1,23 +1,11 @@
-# LEMAY.AI INTERVIEW QUESTIONS
-Hello, human.
 
-Your goal is to demonstrate your coding skills by creating a video recording of your answers to some general knowledge questions, writing an ML API demo using Docker, python3, and a bit of magic, and showing us your exploratory data analysis skills. Please spend minimal effort on graphics and UI, as this is not a test of your UI coding skills. Just don't stress on frontend stuff.
-
-# 1) GENERAL KNOWLEDGE VIDEO DEMONSTRATION
-- Please make a video recording of your answers to the questions in the notebook: https://github.com/lemay-ai/fizzbuzz/blob/main/Interview_Questions.ipynb
-- Please send the video file to daniel@lemay.ai and matt@lemay.ai
-- After you submit the video, proceed to steps 2 and 3, below.
 
 # 2) MODEL DEPLOYMENT DEMONSTRATION
-
-- Create a container to process inference requests from any pretrained model in the huggingface model hub: https://huggingface.co/models
-- Your solution should include server components to support multiple parallel incoming requests (e.g., NGINX/gunicorn)
-- Create a notebook to demonstrate requests that POST to the container endpoint and print out the response
-- Please explain why you have chosen this model as your demonstration
+- run the Notebook Fizzbuzz task 2.ipynb to deploy the app huggingface-inference on port 8000. the app classifies text as toxic/non-toxic. the last cell in notebook is used to send request to the docker container and receive a response.
+- the model used is "martin-ha/toxic-comment-model". I chose NLP task because of familiarity, and chose this model because of large number of downloads while also being a reasonable size to deploy. other models i tried were too big and were running into time out errors, so for purpose of demonstration only, i went for a smaller model instead. 
 
 # 3) EXPLORATORY DATA ANALYSIS DEMONSTRATION
-- Perform exploratory data analysis on any dataset in the huggingface datasets hub: https://huggingface.co/datasets
-- Include a notebook that contains your analysis within the repository
-- Please explain why you have chosen this dataset for your demonstration of exploratory data analysis
-- Document the process for using your updated repo in README.md so that we can try out your demo ourselves
-- Share the repo with the github users dcshapiro and elmathioso
+
+- for this task I chose the olivierdehaene/xkcd dataset because I wanted to try out multi-modal dataset. again one reason for picking this dataset is because of its smaller size, that was quick to load compared to some of the other datsets.
+- use the notebook Dataset exploration.ipynb for this task.
+- the first section shows a wordcloud of the most common words in the title. you can then use these to explore comics by keyword or create a story of multi-part comics.
